@@ -1,4 +1,4 @@
-# Projet de Gestion des Contacts
+# Projet CRUD
 
 ## Objectif
 
