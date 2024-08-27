@@ -32,22 +32,32 @@ Installe toutes les dépendances nécessaires pour le backend de ce projet :
     npm install -D nodemon
 ```
 
+Creer de suite un `.gitignore` pour les node_modules pour ne pas les envoyer sur Git Hub
+
 3. **Configurer le Mode Module** :
 
 Assurez-vous que le projet utilise le mode ECMAScript Modules (ESM). Pour cela, ajoutez `"type": "module"` dans le fichier `package.json` :
 
 ```json
 {
-  "name": "CRUD-REACT-EXPRESS-SQLITE3",
+  "name": "backend",
   "version": "1.0.0",
   "type": "module",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1",
-    "sqlite3": "^5.0.2"
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }
 ```
@@ -65,49 +75,16 @@ Ton projet devrait ressembler a ceci pour le moment !
 
 ```bash
 └── backend/
+    ├── node_modules/
     ├── src/
     │   ├── controllers/ 
     │   ├── models/       
     │   ├── routes/   
     │   ├── utils/         
     │   ├── tests/        
-    │   └── app.js                   
-    └── package.json
+    │   └── app.js    
+    ├── .gitignore               
+    ├── package.json
+    └── package-lock.json
 ```
-
-
-
-
-
-
-
-## Structure du Projet
-
-```bash
-└── backend/
-    ├── src/
-    │   ├── controllers/
-    │   │   └── contactController.js  # Logique métier
-    │   ├── models/
-    │   │   └── contactModel.js       # Modèle de données pour les contacts
-    │   ├── routes/
-    │   │   └── contactRoutes.js      # Définitions des routes Express
-    │   ├── utils/
-    │   │   ├── db.js                 # Configuration et initialisation de la base de données
-    │   │   └── contact.sqlite        # Fichier de la base de données SQLite
-    │   └── app.js                    # Point d'entrée de l'application
-    └── package.json
-```
-
-### Fichiers Importants
-
-- **`dbConfig.js`** : Contient la configuration de la base de données SQLite et exécute les requêtes SQL pour créer les tables.
-- **`contactModel.js`** : Définit les fonctions pour interagir avec la base de données (par exemple, récupérer, ajouter, mettre à jour et supprimer des contacts).
-- **`contactController.js`** : Gère les requêtes HTTP en appelant les fonctions du modèle.
-- **`contactRoutes.js`** : Définit les routes API pour gérer les contacts.
-- **`contact.sqlite`** : Ta base de données ou toutes les requêtes SQL seront éxécutées
-- **`app.js`** : Point d'entrée principal pour démarrer le serveur Express.
-
-
-
 
