@@ -1,0 +1,26 @@
+POST http://localhost:5000/api/contacts/
+Content-Type: application/json
+
+{
+    "name": "Marc",
+    "phone": "06 01 02 03 69"
+}
+
+
+###
+
+GET http://localhost:5000/api/contacts/
+
+###
+
+PUT http://localhost:5000/api/contacts/1
+Content-Type: application/json
+
+{
+    "name": "heidi",
+    "phone": "06 01 02 03 10"
+}
+
+###
+
+DELETE http://localhost:5000/api/contacts/3
